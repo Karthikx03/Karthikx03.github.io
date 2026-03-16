@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Code Example</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+.codebox{
+    border:3px solid black;
+    width:350px;
+    padding:20px;
+    background-color:#f2f2f2;
+}
+
+pre{
+    font-family: "Courier New", monospace;
+}
+</style>
+
+</head>
+
+<body>
+
+<p>Code example:</p>
+
+<div class="codebox">
+<pre>
+var person = {
+  firstName: “Ka”rthikeyan,
+  lastName : “P”,
+  studentId: “114502910”
+}
+</pre>
+</div>
+
+</body>
+</html>
