@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Headings Layout</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: "Times New Roman", serif;
-        }
+<meta charset="UTF-8">
+<title>Headings Layout</title>
 
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            background: #eee;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+<style>
+    body {
+        background-color: black;
+        font-family: "Times New Roman", serif;
+    }
 
-        /* Heading 1 */
-        .heading1 {
-            font-size: 48px;
-            font-weight: bold;
-            border-top: 6px solid black;
-            display: inline-block;
-            padding-top: 10px;
-            text-shadow: none; /* explicitly removed */
-        }
+    .outer {
+        width: 90%;
+        margin: 60px auto;
+        background: #d9d9d9;
+        padding: 40px;
+    }
 
-        /* Heading 2 */
-        .heading2 {
-            font-size: 36px;
-            font-style: italic;
-            border: 4px solid black;
-            outline: 4px solid yellow; /* solid instead of outset */
-            outline-style: solid;       /* ensures no outset effect */
-            padding: 10px;
+    .container {
+        background: #e6e6e6;
+        padding: 40px;
+        box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Heading 1 */
+    .heading1 {
+        font-size: 60px;
+        font-weight: bold;
+        border-top: 8px solid black;
+        display: inline-block;
+        padding-top: 10px;
+
+        /* pink + blue shadow like image */
+        text-shadow:
+            3px 3px 0px #ff4da6,
+            -3px -3px 0px #00ccff;
+    }
+
+    /* Heading 2 */
+    .heading2 {
+        font-size: 40px;
+        font-style: italic;
+        border: 3px solid black;
+        outline: 6px solid yellow;
+        padding: 15px 20px;
+        margin: 50px 0;
+        background: #e6e6e6;
+    }
+
+    /* Heading 3 */
+    .heading3 {
+        font-size: 36px;
+        text-align: right;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top: 60px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="container">
+
+        <div class="heading1">This is heading 1</div>
+
+        <div class="heading2">This is heading 2</div>
+
+        <div class="heading3">This is heading 3</div>
+
+    </div>
+</div>
+
+</body>
+</html>            padding: 10px;
             margin: 30px 0;
         }
 
