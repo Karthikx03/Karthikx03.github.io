@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Layout</title>
-<style>
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    font-family: Arial;
-    background: #5aa2d6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .card {
-    width: 260px;
-    background: #eee;
-    border-radius: 12px;
-    padding: 10px;
-  }
-
-  .box { margin: 6px 0; }
-
-  .header {
-    background: #a6ce39;
-    height: 80px;
-    border-radius: 6px;
-  }
-
-  .content {
-    display: flex;
-    gap: 6px;
-  }
-
-  .content div {
-    background: #18aeb5;
-    height: 80px;
-    flex: 1;
-  }
-
-  .footer {
-    display: flex;
-    gap: 6px;
-  }
-
-  .footer div {
-    background: #ccc;
-    height: 40px;
-    flex: 1;
-  }
-
-  /* DEFAULT (DESKTOP like right side) */
-  .content {
-    flex-direction: row;
-  }
-
-  /* MOBILE (left side when <480px) */
-  @media (max-width: 480px) {
-    .content {
-      flex-direction: column;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  }
-</style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #56b5ef;
+      padding: 20px;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .header {
+      height: 130px;
+      background: #b4df3e;
+      margin-bottom: 8px;
+    }
+
+    .main {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .main div {
+      flex: 1;
+      height: 170px;
+      background: #12bcc7;
+    }
+
+    .footer {
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer div {
+      flex: 1;
+      height: 95px;
+      background: #e8f0f2;
+    }
+
+    /* When viewport width is less than 480px */
+    @media (max-width: 479px) {
+      .wrapper {
+        max-width: 360px;
+      }
+
+      .main {
+        flex-direction: column;
+      }
+
+      .main div {
+        height: 65px;
+      }
+
+      .footer {
+        flex-wrap: wrap;
+      }
+
+      .footer div {
+        flex: 0 0 calc(50% - 4px);
+        height: 45px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrapper">
+    <div class="header"></div>
 
-<div class="card">
-  <div class="box header"></div>
+    <div class="main">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-  <div class="box content">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="footer">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
-
-  <div class="box footer">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-
 </body>
 </html>
