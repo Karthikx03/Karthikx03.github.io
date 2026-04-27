@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Image Styling Exercise</title>
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+<style>
+  * { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: #5aa2d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-    .container {
-      width: 900px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .card {
+    width: 260px;
+    background: #eee;
+    border-radius: 12px;
+    padding: 10px;
+  }
 
-    img {
-      width: 33%;
-      height: 300px;
-      object-fit: cover;
-    }
+  .box { margin: 6px 0; }
 
-    /* Left image */
-    .rounded {
-      border-radius: 18px;
-    }
+  .header {
+    background: #a6ce39;
+    height: 80px;
+    border-radius: 6px;
+  }
 
-    /* Middle image (circle, no distortion) */
-    .circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #2f2f2f; /* dark border */
-    }
+  .content {
+    display: flex;
+    gap: 6px;
+  }
 
-    /* Right image (distorted) */
-    .distorted {
-      object-fit: fill;
+  .content div {
+    background: #18aeb5;
+    height: 80px;
+    flex: 1;
+  }
+
+  .footer {
+    display: flex;
+    gap: 6px;
+  }
+
+  .footer div {
+    background: #ccc;
+    height: 40px;
+    flex: 1;
+  }
+
+  /* DEFAULT (DESKTOP like right side) */
+  .content {
+    flex-direction: row;
+  }
+
+  /* MOBILE (left side when <480px) */
+  @media (max-width: 480px) {
+    .content {
+      flex-direction: column;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- Left: rounded corners -->
-    <img src="https://picsum.photos/id/1015/600/400" class="rounded" />
+<div class="card">
+  <div class="box header"></div>
 
-    <!-- Middle: circle -->
-    <img src="https://picsum.photos/id/1016/600/400" class="circle" />
-
-    <!-- Right: distorted -->
-    <img src="https://picsum.photos/id/1015/600/400" class="distorted" />
-
+  <div class="box content">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+
+  <div class="box footer">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
 </body>
 </html>
