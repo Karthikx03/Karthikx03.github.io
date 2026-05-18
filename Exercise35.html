@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object Manipulation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; color: #333; }
+        .container { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        h3 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 8px; margin-top: 20px; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 4px; font-family: monospace; overflow-x: auto; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Assignment Output</h2>
+    
+    <h3>1. List of All Original Properties</h3>
+    <p id="properties-list" style="font-weight: bold; color: #e74c3c;"></p>
+
+    <h3>2. Object After Deleting 'age' Property</h3>
+    <pre id="updated-object"></pre>
+</div>
+
+<script>
+    // The sample object
+    var Person = {
+        firstName : "Tony",
+        lastName : "Lee",
+        age : 50,
+        eyeColor : "Blue"
+    };
+
+    // 1. List all properties of the object
+    var properties = Object.keys(Person).join(", ");
+    document.getElementById("properties-list").textContent = properties;
+
+    // 2. Delete the age property from the object
+    delete Person.age;
+
+    // 3. Print/render the object after deleting the property
+    document.getElementById("updated-object").textContent = JSON.stringify(Person, null, 4);
+</script>
+
+</body>
+</html>
