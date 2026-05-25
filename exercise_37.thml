@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Properties Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Circle Calculator</h2>
+    <label for="radiusInput">Enter Radius:</label>
+    <input type="number" id="radiusInput" placeholder="e.g., 5" min="0">
+    
+    <button onclick="calculateCircleProperties()">Calculate</button>
+
+    <div class="result" id="circumferenceResult"></div>
+    <div class="result" id="areaResult"></div>
+</div>
+
+<script>
+    // Function 1: Calculate and display the circumference
+    function calcCircumfrence(radius) {
+        // Formula: C = 2 * 𝜋 * r
+        let circumference = 2 * Math.PI * radius;
+        // Round to 2 decimal places for clean formatting
+        circumference = circumference.toFixed(2); 
+        
+        // Output the result to the page
+        document.getElementById("circumferenceResult").innerText = "The circumference is " + circumference;
+    }
+
+    // Function 2: Calculate and display the area
+    function calcArea(radius) {
+        // Formula: A = 𝜋 * r²
+        let area = Math.PI * Math.pow(radius, 2);
+        // Round to 2 decimal places
+        area = area.toFixed(2);
+        
+        // Output the result to the page
+        document.getElementById("areaResult").innerText = "The area is " + area;
+    }
+
+    // Main helper function triggered by the button click
+    function calculateCircleProperties() {
+        // Grab the radius value from the input field
+        let radius = document.getElementById("radiusInput").value;
+        
+        // Convert input string to a number
+        radius = parseFloat(radius);
+
+        if (isNaN(radius) || radius <= 0) {
+            alert("Please enter a valid positive number for the radius.");
+            return;
+        }
+
+        // Call the two functions required by the prompt
+        calcCircumfrence(radius);
+        calcArea(radius);
+    }
+</script>
+
+</body>
+</html>
